@@ -1,0 +1,45 @@
+{
+  "title": "Fluxo de Dados da Plataforma PARSE",
+  "layers": [
+    {
+      "name": "Camada 1: Entrada e Ingestão",
+      "items": [
+        "Envio via foto, PDF ou texto",
+        "Transporte criptografado TLS 1.3",
+        "Registro de consentimento obrigatório antes do processamento"
+      ]
+    },
+    {
+      "name": "Camada 2: Processamento Efêmero",
+      "items": [
+        "OCR, classificação e extração de entidades",
+        "Tradução para Leitura Fácil e portão de fidelidade",
+        "Dados em memória volátil sem gravação em disco",
+        "Log de acesso auditável em tempo real"
+      ]
+    },
+    {
+      "name": "Camada 3: Armazenamento Mínimo",
+      "items": [
+        "Tradução persistida apenas se solicitado pelo titular",
+        "Registro imutável com hash SHA-256",
+        "Metadados agregados e anonimizados",
+        "Documento original descartado"
+      ]
+    },
+    {
+      "name": "Camada 4: Saída e Distribuição",
+      "items": [
+        "Entrega da tradução com link temporário",
+        "Painel institucional com dados agregados"
+      ]
+    }
+  ],
+  "crossCuttingControls": [
+    "Conformidade LGPD art. 46 e descarte de buffers",
+    "Criptografia AES-256 em repouso",
+    "Trilha de auditoria append-only",
+    "Pseudonimização do titular"
+  ],
+  "note": "Arquitetura proposta; itens não representam funcionalidades implementadas neste protótipo front-end."
+}
