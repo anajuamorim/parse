@@ -1,0 +1,19 @@
+{
+  "name": "PARSE — Porque entender é um direito",
+  "short_name": "PARSE",
+  "description": "Protótipo CitizenTech de acessibilidade informacional.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f6",
+  "theme_color": "#101b35",
+  "icons": [
+    {
+      "src": "./parse-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
