@@ -37,11 +37,13 @@ Consulte [Arquitetura](docs/architecture.md), [Governança e privacidade](docs/g
 2. Abra `prototype/index.html` no navegador.
 3. Use o texto de exemplo ou cole um texto fictício no campo de entrada.
 
-Não é necessário instalar dependências ou configurar servidor.
+Não é necessário instalar dependências para executar localmente. Para testar o modo offline, publique em HTTPS (GitHub Pages) ou use um servidor local; service workers não funcionam ao abrir o arquivo diretamente via `file://`.
 
-## Publicar com GitHub Pages
+## Publicação e acesso offline
 
-No GitHub, acesse **Settings → Pages**, escolha **Deploy from a branch**, selecione `main` e a pasta `/ (root)` caso queira publicar a página inicial do repositório. Se preferir publicar diretamente a pasta do protótipo, mova os arquivos para a raiz ou configure a estrutura de publicação de acordo com o Pages.
+O repositório inclui um workflow do GitHub Actions para publicar a demonstração no GitHub Pages a cada atualização da branch `main`. Para ativar a publicação pela primeira vez, acesse **Settings → Pages → Build and deployment** e selecione **Source: GitHub Actions**. Depois, acompanhe a execução em **Actions**. Quando o deploy terminar, o endereço público aparecerá no resumo do workflow.
+
+A demonstração também inclui um manifesto e um service worker para cache dos arquivos estáticos. Após abrir a página ao menos uma vez com conexão, o navegador poderá reutilizar os arquivos em visitas offline. A disponibilidade depende das políticas e do suporte do navegador; fontes externas podem não carregar sem internet.
 
 ## Próximas etapas para uma implementação real
 
