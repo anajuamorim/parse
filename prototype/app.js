@@ -45,3 +45,14 @@ document.querySelector("#speakBtn").addEventListener("click",()=>{
  speechSynthesis.cancel();const utterance=new SpeechSynthesisUtterance(document.querySelector("#simpleText").textContent);utterance.lang="pt-BR";speechSynthesis.speak(utterance);document.querySelector("#speechStatus").textContent="Reprodução iniciada.";
 });
 document.querySelector("#stopBtn").addEventListener("click",()=>{if("speechSynthesis" in window)speechSynthesis.cancel();document.querySelector("#speechStatus").textContent="Áudio interrompido.";});
+
+
+// Cache local para permitir reabrir a demonstração após a primeira visita online.
+if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js").catch(() => {
+      const status = document.querySelector("#status");
+      if (status) status.textContent = "Modo offline indisponível neste navegador; a demonstração continua funcionando online.";
+    });
+  });
+}
